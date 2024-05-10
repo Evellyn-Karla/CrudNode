@@ -10,17 +10,17 @@ const Receita = mongoose.model('Receita', {
     preparo: String
 })
 
-routes.get('/', async (req, res) => {
+routes.get('/read', async (req, res) => {
     const receitas = await Receita.find()
     return res.send(receitas)
 })
 
-routes.delete("/:id", async (req, res) => {
+routes.delete("/delete/:id", async (req, res) => {
     const receita = await Receita.findByIdAndDelete(req.params.id)
     return res.send(receita)
 })
 
-routes.put("/:id", async (req, res) => {
+routes.put("/update/:id", async (req, res) => {
     const receita = await Receita.findByIdAndUpdate(req.params.id, {
         nome: req.body.nome,
         tempo: req.body.tempo,
@@ -32,7 +32,7 @@ routes.put("/:id", async (req, res) => {
 
 })
 
-routes.post("/", async (req, res) => {
+routes.post("/create", async (req, res) => {
 
     try {
         const receita = await Receita.create(req.body)
