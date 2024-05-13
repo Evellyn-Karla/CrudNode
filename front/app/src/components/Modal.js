@@ -50,7 +50,7 @@ export default function Modal({onClose}) {
       preparo: inputValues.input5
       };
       // const response = await axios.post('https://61705914-beb2-49c1-a761-95d3eb82ac0d-00-qau7r1kk0chc.riker.replit.dev/create', receitaData); // Enviar dados para a API
-      const response = await fetch('/create', {
+      const response = await fetch('https://61705914-beb2-49c1-a761-95d3eb82ac0d-00-qau7r1kk0chc.riker.replit.dev:3001/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

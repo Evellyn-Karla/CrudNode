@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from "./components/Header";
 import Lista from "./components/Lista"
 import Modal from "./components/Modal"
@@ -23,9 +23,26 @@ export default function App() {
   function closeModal() {
     setModalOpen(false);
     console.log("fechou");
+    getReceitas();
   }
 
+  const [receitasI, setReceitasI] = useState()
   
+  function getReceitas() {
+    const response = await fetch('https://61705914-beb2-49c1-a761-95d3eb82ac0d-00-qau7r1kk0chc.riker.replit.dev:3001/read', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(receitaData)
+    })
+
+  setReceitasI(response)
+  
+  useEffect(() => {
+    getReceitas();
+  }, [])
+
 
 
     return (
@@ -33,7 +50,7 @@ export default function App() {
             <Header />
             <ButtonNew clickBtn={clickBtnNew} />
           <div id="lista-modal">
-            <Lista />
+            <Lista receitasData = {receitasI}/>
             {modalOpen && <Modal onClose={closeModal} /> }
             <View />
           </div>  
