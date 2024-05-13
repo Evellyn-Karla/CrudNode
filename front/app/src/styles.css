@@ -222,7 +222,7 @@ h2 {
 }
 
 
-#modal {
+/* #modal {
   border: 1px solid saddlebrown;
   border-radius: 1rem;
   height: 400px;
@@ -231,8 +231,9 @@ h2 {
   display: none;
 
 }
+ */
 
-#modal.active {
+#modal{
   border: 1px solid saddlebrown;
   border-radius: 1rem;
   height: 400px;

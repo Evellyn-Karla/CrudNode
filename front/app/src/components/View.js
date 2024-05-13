@@ -4,7 +4,7 @@ export default function View() {
 
     <div id="view">
 
-      <div class="fechar">
+      <div className="fechar">
 
         <div id="btn">
 
@@ -28,15 +28,15 @@ export default function View() {
 
       <div id="view2">
 
-        <div class="nome">
+        <div className="nome">
 
           <h2 id="nome"></h2>
 
         </div>
 
-        <div class="info">
+        <div className="info">
 
-          <div class="tempo">
+          <div className="tempo">
 
             <h3>Tempo:</h3>
 
@@ -44,7 +44,7 @@ export default function View() {
 
           </div>
 
-          <div class="rend">
+          <div className="rend">
 
             <h3>Rendimento:</h3>
 
@@ -54,7 +54,7 @@ export default function View() {
 
         </div>
 
-        <div class="ingred">
+        <div className="ingred">
 
           <h3>Ingredientes:</h3>
 
@@ -62,7 +62,7 @@ export default function View() {
 
         </div>
 
-        <div class="preparo">
+        <div className="preparo">
 
           <h3>Modo de preparo:</h3>
 
