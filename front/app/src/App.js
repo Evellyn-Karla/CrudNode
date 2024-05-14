@@ -28,16 +28,17 @@ export default function App() {
 
   const [receitasI, setReceitasI] = useState()
   
-  function getReceitas() {
+  const getReceitas = async () => {
     const response = await fetch('https://61705914-beb2-49c1-a761-95d3eb82ac0d-00-qau7r1kk0chc.riker.replit.dev:3001/read', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(receitaData)
+      }
     })
-
-  setReceitasI(response)
+      const data = await response.json();
+      console.log("response",  response, "data", data)
+      setReceitasI(data)
+  };
   
   useEffect(() => {
     getReceitas();

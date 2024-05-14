@@ -58,7 +58,7 @@ export default function Modal({onClose}) {
       body: JSON.stringify(receitaData)
     });
       console.log('Item adicionado', response.data);
-      
+      handleClose();
       // Lógica adicional, como atualizar a lista de itens após adicionar um novo
     } catch (error) {
       console.error('Erro ao adicionar item:', error);
